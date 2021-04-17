@@ -13,7 +13,7 @@ function App() {
       <div className="navbar">
         <div className="container">
           {/* logo as text, clickable, we'll add style to span text */}
-          <a href="#">
+          <a className='logo' href="#">
             Remember<span>That</span>
           </a>
 

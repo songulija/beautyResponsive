@@ -2,4 +2,80 @@
     background: white;    
     // add padding inside element
     padding: 1em;
+
+    // style child of navbar loog
+    .logo{
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        font-size: 1.2em;
+
+        // make span element inside .logo blue
+        span{
+            // get css property(varuable) 
+            color: var(--primary-color);
+
+        }
+
+    }
+
+    // setting style to navbar
+    nav{
+        display: none;
+    }
+
+    .container{
+        display: flex;
+        // style loog
+        place-content: space-between;
+    }
+
+    .mobile-menu{
+        // when hovering point at it
+        cursor: pointer;
+    }
 }
+
+// reference all a elements
+a{
+    color: #444444;
+}
+
+
+ul{
+    // get rid of bullet points from ul list. margin and padding to 0. becouse it has by default some
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    //adding padding to each section
+    padding: 5em 2em;
+
+}
+
+
+.hero{
+    // align all text in hero to center 
+    text-align: center;
+}
+
+.left-col{
+    // set p text which has class subhead
+    .subhead{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: gray;
+        letter-spacing: 0.3em;
+    }
+    h1{
+        font-size: 2.5em;
+        // add line height between this text. becouse its too small
+        line-height: 1.3em;
+    }
+}
+
+
+
+
