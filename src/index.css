@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-* {
-
+/* specify  css properties*/
+:root{
+  --primary-color: #007af3;
 }
+
 
 body {
   margin: 0;

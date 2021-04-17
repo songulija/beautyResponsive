@@ -7,6 +7,23 @@ import holdingPhoneJpg from './images/holding-phone.jpg'
 import personJpg from './images/person.jpg'
 
 function App() {
+
+  const openCloseAnimation = (e) =>{
+    const name = e.target.id;
+    const nav = document.querySelector('nav')
+
+    // then open animation
+    if(name === 'mobile-cta'){
+      // select nav, add new class to nav 'menu-btn'
+      nav.classList.add('menu-btn')
+    }else if(name === 'mobile-exit'){//else Close animation
+      //remove 'menu-btn' class styling from nav
+      nav.classList.remove('menu-btn')
+
+    }
+    
+  }
+
   return (
     <div className="app">
       {/* we have our navbar container we'll have another smaller container which will hold navigation bar */}
@@ -18,11 +35,11 @@ function App() {
           </a>
 
           {/* hamburger menu for mobile */}
-          <img id='mobile-cta' className='mobile-menu' src={menuSvg} alt='Open navigation'/>
+          <img id='mobile-cta' className='mobile-menu' src={menuSvg} alt='Open navigation' onClick={openCloseAnimation}/>
           {/* we'll have to ul's, one on right second on right side */}
           <nav>
             {/* x sign to close navigation when on mobile */}
-            <img id='mobile-exit' className='mobile-menu-exit' src={exitSvg} alt='Close navigation'/>
+            <img id='mobile-exit' className='mobile-menu-exit' src={exitSvg} alt='Close navigation' onClick={openCloseAnimation}/>
 
             <ul className='primary-nav'>
               <li className='current'>
@@ -66,7 +83,7 @@ function App() {
 
         {/* image on right side. with flex all container elements will be placed each vertically
         next to each other */}
-        <img src={illustrationSvg} alt='Illustration'/>
+        <img className='hero-img' src={illustrationSvg} alt='Illustration'/>
       
        </div>
     </section>
@@ -74,7 +91,7 @@ function App() {
    {/* second  section which holds smaller container which then holds data that we'll display */}
     <section className='features-section'>
         <div className='container'>
-          <ul>
+          <ul className='features-list'>
             <li>Unlimited Tasks</li>
             <li>SMS Task Reminders</li>
             <li>Confetti Explosions upon Task Completions</li>
@@ -93,28 +110,31 @@ function App() {
         <div className='container'>
           {/* we will have three ul with list items inside */}
           <ul>
-            <li><img src={personJpg} alt=''/></li>
-            <blockquote>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</blockquote>
-            <cite>- Jane Doe</cite>
+            <li><img src={personJpg} alt=''/>
+              <blockquote>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</blockquote>
+              <cite>- Jane Doe</cite>
+            </li>
           </ul>
 
           <ul>
-            <li><img src={personJpg} alt=''/></li>
-            <blockquote>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</blockquote>
-            <cite>- Jane Doe</cite>
+            <li><img src={personJpg} alt=''/>
+              <blockquote blockquote>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</blockquote>
+              <cite>- Jane Doe</cite>
+            </li>
           </ul>
           
           <ul>
-            <li><img src={personJpg} alt=''/></li>
-            <blockquote>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</blockquote>
-            <cite>- Jane Doe</cite>
+            <li><img src={personJpg} alt=''/>
+              <blockquote>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</blockquote>
+              <cite>- Jane Doe</cite>
+            </li>
           </ul>
         </div>
 
     </section>
 
     {/* last section which holds smaller cantainer which then holds data that we'll display*/}
-    <section className='contact-section'></section>
+    <section className='contact-section'>
         <div className='container'>
           {/* cantainer holds  two other containers contact-left and contact-right*/}
           <div className='contact-left'>
@@ -130,10 +150,13 @@ function App() {
 
           {/*  */}
           <div className='contact-right'>
-            <h2>Hello</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2307.352033545884!2d25.25517172789439!3d54.66823184383972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd95c85d06c1a1%3A0x304060b9a097e0b1!2sLuminor%20ATM!5e0!3m2!1slt!2slt!4v1618569775380!5m2!1slt!2slt" width="600" height="450" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2307.352033545884!2d25.25517172789439!3d54.66823184383972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd95c85d06c1a1%3A0x304060b9a097e0b1!2sLuminor%20ATM!5e0!3m2!1slt!2slt!4v1618569775380!5m2!1slt!2slt" width="600" height="450" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
         </div>
+    </section>
+
+
+
     </div>
   );
   // <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2307.352033545884!2d25.25517172789439!3d54.66823184383972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd95c85d06c1a1%3A0x304060b9a097e0b1!2sLuminor%20ATM!5e0!3m2!1slt!2slt!4v1618569775380!5m2!1slt!2slt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

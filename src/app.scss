@@ -1,5 +1,496 @@
+
+// STYLE FOR MOBILE FIRST
+
 .navbar{
     background: white;    
     // add padding inside element
     padding: 1em;
+
+    // style child of navbar loog
+    .logo{
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        font-size: 1.2em;
+
+        // make span element inside .logo blue
+        span{
+            // get css property(varuable) 
+            color: var(--primary-color);
+
+        }
+
+    }
+
+    // setting style to navbar
+    nav{
+        display: none;
+    }
+
+    .container{
+        display: flex;
+        // style loog
+        place-content: space-between;
+    }
+
+    .mobile-menu{
+        // when hovering point at it
+        cursor: pointer;
+    }
+}
+
+// reference all a elements
+a{
+    color: #444444;
+}
+
+
+ul{
+    // get rid of bullet points from ul list. margin and padding to 0. becouse it has by default some
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    //adding padding to each section
+    padding: 5em 2em;
+
+}
+
+
+.hero{
+    // align all text in hero to center 
+    text-align: center;
+}
+
+.left-col{
+    // set p text which has class subhead
+    .subhead{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: gray;
+        letter-spacing: 0.3em;
+    }
+    h1{
+        font-size: 2.5em;
+        // add line height between this text. becouse its too small
+        line-height: 1.3em;
+    }
+
+    // for button
+    .primary-cta{
+        background: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        // adding space inside, border radius
+        padding: 0.6em 1.3em;
+        font-size: 1.4em;
+        border-radius: 5em;
+        font-weight: bold;
+        display: inline-block;
+    }
+    //this has to be bellow button
+    .watch-video-cta{
+        //Displays an element as a block element
+        // It starts on a new line, and takes up the whole width
+        display: block;
+        margin-top: 1em;
+        
+        //add style to image inside
+        img{
+            margin-right: .5em;
+        }
+    }
+}
+
+.hero-img{
+    width: 70%;
+    margin-top: 3em;
+}
+
+
+//style to second section
+section.features-section{
+    background: #20272e;
+    color: white;
+}
+
+//ad style to ul list
+ul.features-list{
+    margin: 0;
+    padding-left: .1em;
+    //comming back to this
+    display: grid;
+    // if it doesnt have enough room keep in same column,
+    //if there's more room then divide in multiple columns
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+
+    li{
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        margin-left: 2em;   
+        position: relative;
+        //is positioned relative to its normal position.
+        
+        // add something before li. in css li::before
+        &:before{
+            left: -2em;
+            content: '';
+            position: absolute;
+            // positioned relative to the nearest positioned ancestor(to li)
+            width: 28px;
+            height: 28px;
+            background-image: url('./images/bullet.svg');
+            margin-right: 0.5rem;
+
+        }
+    }
+}
+
+// dont display that image on mobile
+.features-section img{
+    display: none;
+}
+
+
+.testimonials-section{
+    background: var(--primary-color);
+    color: white;
+
+    // add style to li
+    li{
+        background: #006bd6;
+        // centers image and text
+        text-align: center;
+        // padding on top bottom and right left
+        padding: 2em 1em;
+        width: 80%;
+        //margin 0top, auto right and left will center it
+        //becouse it will add as much margin as it can from both sides
+        margin: 0 auto 5em auto;
+        border-radius: 1em;
+        
+        img{
+            width: 5em;
+            height: 5em;
+            border: 5px solid #006bd6;
+            border-radius: 50%;
+            // add border and radius to img
+            //also margin top -4.5 so it'll go up
+            margin-top: -4.5em;
+            
+        }
+    }   
+}
+
+
+// contact-section
+section.contact-section{
+    // we already have padding added to each section
+    h2{
+        font-size: 2em;
+    }
+    label{
+        display: block;
+        // so label will start at new line and take all space
+        font-size: 1.2em;
+        margin-bottom: .5em;
+    }
+    
+    input, textarea{
+        width: 100%;
+        // add space inside, to make them larger
+        padding:.8em;
+        // add space on outside, border and radius too
+        margin-bottom: 1em;
+        border-radius: .3em;
+        border: 1px solid gray;
+    }
+
+    .submit{
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: bold;
+        font-size: 1.3em;
+        border: none;
+        // no border, and radius 5, a bit margin bottom too
+        margin-bottom: 5em;
+        border-radius: 5em;
+        // it will go onto new line and take entire line of space
+        display: inline-block;
+        //add space inside
+        padding: .8em 2em;
+        width: unset;
+        cursor: pointer;
+    }
+
+    // iframe
+    iframe{
+        width: 100%;
+        height: 300px;
+        border: none;
+    }
+
+}
+
+nav.menu-btn{
+    display: block;
+}
+// nav which contains unordered list
+nav{
+    // position of nav will be fixed. it\ll stay on top all time
+    position: fixed;
+    // that high zindex means menu will be on top of everything
+    z-index: 999;
+    width: 66%;
+    // it will be on right side, and on top
+    right: 0;
+    top: 0;
+    background: #20272e;
+    // height will be 100 view port(on whole screen
+    height: 100vh;
+    padding: 1em;
+
+
+    ul.primary-nav{
+        margin-top: 5em;
+    }
+
+    li{
+        a{
+            color: white;
+            text-decoration: none;
+            // add display block on A  so we can add padding and margin
+            display: block;
+            padding: .5em;
+            margin: 1.3em;
+            // alighn text on right side
+            text-align: right;
+            // a::hover
+            &:hover{
+                font-weight: bold;
+            }
+        }
+    }
+
+}
+
+.mobile-menu-exit{
+    // push it right
+    float: right;
+    margin: .5em;
+    cursor: pointer;
+
+}
+
+
+
+
+
+// now we have to make responsive form computers and tablets
+
+// any styling here will apply if screen is 768 px and larger(tablets or big phones)
+@media only screen and (min-width: 768px){
+    // hide .mobile-menu, .mobile-menu-exit images(buttons)
+    //this styling only appear on that size, after dissapears
+    .mobile-menu, .mobile-menu-exit{
+        display: none;
+    }
+
+    .navbar .container{
+        // display grid
+        display: grid;
+        // in container we have logo and nav. 180px for logo, rest for nav
+        grid-template-columns: 180px auto;
+        // set justifycontent to unset
+        justify-content: unset;
+    }
+    .navbar nav{
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        // position unset becouse its currently fixed
+        position: unset;
+        // height is 100% so we set it auto
+        height: auto;
+        width: 100%;
+        padding: 0;
+
+        ul{
+            display: flex;
+            // flex so each element displayed vertically next to each other
+        }
+
+        a{
+            color: black;
+            font-size: 1em;
+            padding: .1em 1em;
+        }
+
+        ul.primary-nav{
+            // becouse we had margin-top added to primary-nav 
+            margin: 0;
+        }
+
+        li.current a{
+            font-weight: bold;
+        }
+        li.go-premium a{
+            color: var(--primary-color);
+            border: 3px solid var(--primary-color);
+            font-weight: bold;
+            border-radius: 5em;
+            // margin-top: -0.2em;
+            //a::hover
+            &:hover{
+                background: var(--primary-color);
+                color: white;
+            }
+        }
+    }
+}
+
+
+// any styling here will apply if screen is 1080pxand larger(computers or pc)
+@media only screen and (min-width: 1080px){
+
+    .container{
+        width: 1080px;
+        // center everything
+        margin: 0 auto
+    }
+    //increase padding inside section elements
+    section{
+        padding: 10em 4em;
+    }
+
+    .hero .container{//style container
+        display: flex;
+        // flex will display children elements vertically next to each other 
+        justify-content: space-between;//make space-between children
+        text-align: left;
+
+        .left-col{
+            //change margin becouse its messed up
+            margin: 3em 3em 0 5em
+
+        }
+        .left-col h1{
+            font-size: 3em;
+            width: 90%;
+            //take 90 percent of width
+        }
+    }
+
+    // styling hero img
+    .hero-img{
+        width: 30%;
+        margin-right: 8em;
+    }
+
+    // which holds two buttons
+    .hero-cta{
+        // flex will display all children vertically, next to each other
+        display: flex;
+    }
+    //margin right outside of .primary-cta button
+    .primary-cta{
+        margin-right: 1em;
+    }
+
+    ul.features-list{
+        display: block;
+        // so each item will take new line for itself
+
+        margin-left: 5em;
+        li{
+            font-size: 1.4em;
+
+        }
+    }
+
+    // relative position features-section to then position img absolute to
+    //it parent
+    .features-section{
+        position: relative;
+
+        img{
+            // start at new line and take whole space
+            display: block;
+            
+            //position img absolute to it parent
+            position: absolute;
+            // it will be on right side, away from bottom -2em
+            right: 0;
+            width: 350px;
+            bottom: -2em;
+        }
+    }
+
+    .testimonials-section .container{  
+        //flex will display all children(of container) vertically next to each other
+        display: flex;
+        li{
+            // margin 0top bottom
+            margin: 0 1em;
+        }
+    }
+
+    // contact section styling
+    .contact-section{
+        .container{
+            //flex will display all children vertically next to each other
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    // second container which holds iframe map in .contact-section
+    .contact-right {
+        margin: 0 2.5em;
+        width: 45%;
+        height: 100%;
+
+        iframe {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    
+
+}
+
+
+
+// pc or laptop bigger
+@media only screen and (min-width: 1450px) {
+    .features-section {
+        // .features-section::before
+        &:before {
+            content: '';
+            position: absolute;
+            // position absolute to its parent (features-section
+            // just making block with background
+            width: 10%;
+            height: 20em;
+            background: var(--primary-color);
+            left: 0;
+            top: -4em;
+        }
+        // 
+        &:after {
+            content: '';
+            // position absolute to its parent (features-section
+            // just making block with background
+            position: absolute;
+            width: 200px;
+            height: 20em;
+            background: url('https://assets.codepen.io/2621168/dots.svg') no-repeat;
+            left: 4.5em;
+            top: 2em;
+        }
+    }
 }
